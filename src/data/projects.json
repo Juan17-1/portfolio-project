@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Calculator",
+    "imageSrc": "projects/project.png",
+    "description": "Simple calculator project to showcase the knowledge gained with different programming languages.",
+    "skills": ["HTML", "CSS", "Javascript", "Docker"],
+    "demo": "https://calculator-project.fly.dev",
+    "source": "https://github.com/Juan17-1/Calculator"
+  },
+  {
+    "title": "Number Guessing Game",
+    "imageSrc": "projects/project.png",
+    "description": "I created this number guessing game as a way to showcase the programming skills I've been learning on my own.",
+    "skills": ["Javascript", "CSS", "HTML"],
+    "demo": "https://number-guessing-game.fly.dev",
+    "source": "https://github.com/Juan17-1/number-guessing-game"
+  },
+  {
+    "title": "Pacman",
+    "imageSrc": "projects/project.png",
+    "description": "This Pacman project allowed me to delve deeper into game development concepts and gain hands-on experience with more advanced programming techniques.",
+    "skills": ["Javascript"],
+    "demo": "",
+    "source": "https://github.com/Juan17-1/Pacman"
+  }
+]
