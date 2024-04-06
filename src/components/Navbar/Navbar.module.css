@@ -28,6 +28,9 @@
   color: var(--color-text);
   text-decoration: none;
 }
+.menuBtn {
+  display: none;
+}
 @media screen and (max-width: 830px) {
   .navbar {
     flex-direction: column;
