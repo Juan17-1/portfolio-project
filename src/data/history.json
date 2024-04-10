@@ -1,18 +1,18 @@
 [
   {
-    "role": "Software Engineer",
-    "organisation": "Google",
-    "startDate": "Sept, 2022",
+    "role": "Bachelors degree ",
+    "organisation": "UNLV",
+    "startDate": "Aug, 2021",
     "endDate": "Present",
-    "experiences": ["Worked on Google Maps", "Reduced load times by 50%"],
+    "experiences": ["Bachelors in Radiology", "Minor is Computer Science"],
     "imageSrc": "history/google.png"
   },
   {
-    "role": "UI Designer",
-    "organisation": "Mirosoft",
-    "startDate": "Aug, 2021",
-    "endDate": "Aug, 2022",
-    "experiences": ["Worked on Windows 11", "Designed the control panel"],
+    "role": "Associates Degree",
+    "organisation": "College of Southern Nevada",
+    "startDate": "Jul, 2024",
+    "endDate": "Dec, 2024",
+    "experiences": ["Associates of Computer Science"],
     "imageSrc": "history/microsoft.png"
   },
   {
