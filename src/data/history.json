@@ -5,7 +5,7 @@
     "startDate": "Aug, 2021",
     "endDate": "Present",
     "experiences": ["Bachelors in Radiology", "Minor is Computer Science"],
-    "imageSrc": "history/google.png"
+    "imageSrc": "history/unlv2.png"
   },
   {
     "role": "Associates Degree",
@@ -13,17 +13,14 @@
     "startDate": "Jul, 2024",
     "endDate": "Dec, 2024",
     "experiences": ["Associates of Computer Science"],
-    "imageSrc": "history/microsoft.png"
+    "imageSrc": "history/csn.png"
   },
   {
-    "role": "SWE Intern",
-    "organisation": "Netflix",
-    "startDate": "Apr, 2020",
-    "endDate": "Jun, 2020",
-    "experiences": [
-      "Worked on component library",
-      "Helped create UI components"
-    ],
-    "imageSrc": "history/netflix.png"
+    "role": "Associates Degree",
+    "organisation": "College of Southern Nevada",
+    "startDate": "Aug, 2019",
+    "endDate": "Dec, 2021",
+    "experiences": ["Associates of Science"],
+    "imageSrc": "history/csn.png"
   }
 ]
