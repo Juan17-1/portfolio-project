@@ -34,5 +34,9 @@
   {
     "title": "Git",
     "imageSrc": "skills/git.png"
+  },
+  {
+    "title": "Fly.io",
+    "imageSrc": "skills/fly.png"
   }
 ]

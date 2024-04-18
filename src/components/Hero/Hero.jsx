@@ -22,9 +22,6 @@ export const Hero = () => {
           are evolving, and join me as I continue to learn, create, and
           innovate.
         </p>
-        <a href="mailto:myemail@email.com" className={styles.contactBtn}>
-          Contact Me
-        </a>
       </div>
       <img
         src={getImageUrl("hero/juan.png")}
