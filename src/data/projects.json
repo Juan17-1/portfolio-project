@@ -16,12 +16,12 @@
     "source": "https://github.com/Juan17-1/number-guessing-game"
   },
   {
-    "title": "Pacman",
+    "title": "Weather App",
     "imageSrc": "projects/project.png",
     "description": "",
     "skills": ["Javascript", "HTML", "CSS"],
-    "demo": "",
-    "source": "https://github.com/Juan17-1/Pacman"
+    "demo": "https://weather-pro.fly.dev",
+    "source": "https://github.com/Juan17-1/Weather-app"
   },
   {
     "title": "School Website",
