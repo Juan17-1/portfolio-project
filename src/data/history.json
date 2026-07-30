@@ -4,16 +4,8 @@
     "organisation": "UNLV",
     "startDate": "Aug, 2021",
     "endDate": "Present",
-    "experiences": ["Bachelors in Radiology", "Minor is Computer Science"],
+    "experiences": ["Bachelors of Science in Computer Science"],
     "imageSrc": "history/unlv2.png"
-  },
-  {
-    "role": "Associates Degree",
-    "organisation": "College of Southern Nevada",
-    "startDate": "Jun, 2024",
-    "endDate": "Dec, 2024",
-    "experiences": ["Associates of Computer Science"],
-    "imageSrc": "history/csn.png"
   },
   {
     "role": "Associates Degree",

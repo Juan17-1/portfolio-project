@@ -1,0 +1,35 @@
+@import "../../vars.css";
+
+.button {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+  font-size: 18px;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-elevated);
+  transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+
+.button:hover {
+  border-color: var(--color-primary-light);
+  background: var(--color-surface-hover);
+  transform: translateY(-3px);
+}
+
+@media screen and (max-width: 600px) {
+  .button {
+    bottom: 18px;
+    right: 18px;
+  }
+}

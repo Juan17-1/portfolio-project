@@ -1,26 +1,39 @@
 @import "../../vars.css";
 
 .container {
-  margin-top: 76px;
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 60px var(--section-padding);
   color: var(--color-text);
-  margin-left: 10%;
-  margin-right: 10%;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 14px;
 }
 
 .title {
-  font-size: 35px;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.6vw, 40px);
   font-weight: 700;
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 48px;
+  max-width: 560px;
 }
 
 .projects {
-  margin-top: 37px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: 15px;
+  gap: 24px;
   width: 100%;
 }

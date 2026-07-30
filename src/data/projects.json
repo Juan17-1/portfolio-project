@@ -1,32 +1,73 @@
 [
   {
+    "id": "calculator",
     "title": "Calculator",
     "imageSrc": "projects/project.png",
-    "description": "",
+    "tagline": "A fully responsive calculator built from scratch with vanilla JavaScript.",
+    "overview": "A browser-based calculator supporting standard arithmetic operations, built to strengthen my grasp of DOM manipulation, event handling, and operator precedence logic without relying on any frameworks or libraries.",
+    "approach": [
+      "Structured the UI with semantic HTML and a CSS grid layout for consistent button alignment across screen sizes.",
+      "Implemented an operator-precedence-aware calculation engine in vanilla JavaScript, handling chained operations and edge cases like divide-by-zero.",
+      "Containerized the app with Docker and deployed it to Fly.io for a lightweight, reproducible hosting setup."
+    ],
+    "results": [
+      "Solidified my understanding of state management and event delegation without a framework.",
+      "First project I shipped with a full Docker-based deployment pipeline."
+    ],
     "skills": ["HTML", "CSS", "Javascript", "Docker"],
     "demo": "https://calculator-project.fly.dev",
     "source": "https://github.com/Juan17-1/Calculator"
   },
   {
+    "id": "number-guessing-game",
     "title": "Number Guessing Game",
     "imageSrc": "projects/project.png",
-    "description": "",
+    "tagline": "An interactive number guessing game with real-time feedback and hint logic.",
+    "overview": "A browser game where the player guesses a randomly generated number, built to practice working with game state, user feedback loops, and conditional logic in JavaScript.",
+    "approach": [
+      "Designed the game loop around a simple state machine tracking attempts, guess history, and win/lose conditions.",
+      "Added dynamic higher/lower feedback that updates the DOM in real time as the player guesses.",
+      "Deployed via Fly.io to keep the project accessible as a live demo for anyone reviewing my work."
+    ],
+    "results": [
+      "Reinforced core JavaScript fundamentals: conditionals, loops, and DOM updates driven by state changes."
+    ],
     "skills": ["Javascript", "CSS", "HTML"],
     "demo": "https://number-guessing-game.fly.dev",
     "source": "https://github.com/Juan17-1/number-guessing-game"
   },
   {
+    "id": "weather-app",
     "title": "Weather App",
     "imageSrc": "projects/project.png",
-    "description": "",
+    "tagline": "A weather lookup app that fetches and displays live forecast data from a public API.",
+    "overview": "A weather app that lets users search any city and see current conditions, built to practice working with asynchronous JavaScript and third-party APIs.",
+    "approach": [
+      "Integrated a public weather API using fetch and async/await, with error handling for invalid city names and failed requests.",
+      "Built a responsive UI that maps weather conditions to icons and dynamic background styling.",
+      "Deployed the app to Fly.io for a live, shareable demo."
+    ],
+    "results": [
+      "First project where I worked directly with an external REST API and handled real-world async edge cases like rate limits, bad input, and network failures."
+    ],
     "skills": ["Javascript", "HTML", "CSS"],
     "demo": "https://weather-pro.fly.dev",
     "source": "https://github.com/Juan17-1/Weather-app"
   },
   {
+    "id": "school-website",
     "title": "School Website",
     "imageSrc": "projects/project.png",
-    "description": "",
+    "tagline": "A multi-page informational website built for a school project brief.",
+    "overview": "A static, multi-page website designed and built to a course brief, focused on clean semantic structure, responsive layout, and accessible navigation.",
+    "approach": [
+      "Planned the site's information architecture and page hierarchy before writing any code.",
+      "Built fully responsive layouts with CSS Flexbox/Grid, tested across breakpoints.",
+      "Focused on semantic HTML for accessibility and maintainability."
+    ],
+    "results": [
+      "One of my earliest projects, and a good marker of how far my HTML/CSS fundamentals have come since."
+    ],
     "skills": ["HTML", "CSS"],
     "demo": "https://edu-website-project.fly.dev",
     "source": "https://github.com/Juan17-1/School-project"

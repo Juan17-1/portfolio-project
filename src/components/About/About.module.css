@@ -2,93 +2,122 @@
 
 .container {
   position: relative;
-  background-color: rgba(12, 12, 12, 0.6);
-  border-radius: 15px;
-  padding: 73px;
-  margin-top: 129px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 60px var(--section-padding);
   z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: 14px;
 }
 
 .title {
   color: var(--color-text);
-  font-size: 35px;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.6vw, 40px);
   font-weight: 700;
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 48px;
+  max-width: 560px;
 }
 
 .content {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
+  gap: 48px;
+}
+
+.imageCard {
+  position: relative;
+  width: 38%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
 }
 
 .aboutImage {
-  width: 35%;
-  padding-top: 15px;
-  border-radius: 40px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imageAccent {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(5, 5, 5, 0.85) 100%);
+  pointer-events: none;
 }
 
 .aboutItems {
+  flex: 1;
   color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 20px;
+  list-style: none;
 }
 
 .aboutItem {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  border-radius: 20px;
-  list-style: none;
-  padding: 25px;
-  background-image: linear-gradient(
-    90deg,
-    rgba(165, 215, 232, 0.42) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: 0.4s;
+  align-items: flex-start;
+  gap: 22px;
+  border-radius: 18px;
+  padding: 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out),
+    background-color 0.3s var(--ease-out);
 }
 
 .aboutItem:hover {
-  background-size: 100% 100%;
+  border-color: var(--color-primary-dim);
+  background-color: var(--color-surface-hover);
+  transform: translateY(-4px);
+}
+
+.iconChip {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 22px;
+  color: #fff;
+  background: var(--gradient-primary);
 }
 
 .aboutItem h3 {
-  font-size: 25px;
+  font-family: var(--font-heading);
+  font-size: 19px;
   font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .aboutItem p {
-  font-size: 25px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
 }
 
 @media screen and (max-width: 830px) {
-  .container {
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   .content {
     flex-direction: column;
   }
 
-  .aboutImage {
-    display: none;
-  }
-
-  .aboutItems {
-    margin-top: 29px;
-  }
-
-  .aboutItem {
-    padding-left: 0;
-    padding-right: 0;
+  .imageCard {
+    width: 100%;
+    max-height: 280px;
   }
 }
