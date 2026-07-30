@@ -103,7 +103,11 @@ export const Hero = () => {
         />
       </motion.div>
 
-      <a href="#about" className={styles.scrollCue} aria-label="Scroll to About">
+      <a
+        href="#about"
+        className={styles.scrollCue}
+        aria-label="Scroll to About"
+      >
         <span className={styles.scrollCueMouse}>
           <span className={styles.scrollCueDot} />
         </span>
