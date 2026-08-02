@@ -1,10 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 
 import styles from "./App.module.css";
-import { About } from "./components/About/About";
 import { BackToTop } from "./components/Background/BackToTop";
-import { BackgroundFX } from "./components/Background/BackgroundFX";
-import { CursorGlow } from "./components/Background/CursorGlow";
 import { CommandPalette } from "./components/CommandPalette/CommandPalette";
 import { Contact } from "./components/Contact/Contact";
 import { Experience } from "./components/Experience/Experience";
@@ -32,12 +29,9 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <BackgroundFX />
-      <CursorGlow />
       <Navbar onOpenPalette={() => setPaletteOpen(true)} />
       <main className={styles.main}>
         <Hero />
-        <About />
         <Experience />
         <Projects
           activeProjectId={activeProjectId}

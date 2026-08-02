@@ -6,10 +6,10 @@ import { FiSearch } from "react-icons/fi";
 import styles from "./Navbar.module.css";
 
 const NAV_LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home", label: "home" },
+  { href: "#experience", label: "experience" },
+  { href: "#projects", label: "projects" },
+  { href: "#contact", label: "contact" },
 ];
 
 export const Navbar = ({ onOpenPalette }) => {
@@ -56,12 +56,13 @@ export const Navbar = ({ onOpenPalette }) => {
       <div className={styles.inner}>
         <a className={styles.logo} href="#home">
           <span className={styles.logoMark}>JE</span>
-          <span className={styles.logoText}>Juan Estrada</span>
+          <span className={styles.logoText}>juan-estrada.dev</span>
         </a>
 
         <ul className={styles.menuItems}>
-          {NAV_LINKS.map((link) => (
+          {NAV_LINKS.map((link, index) => (
             <li key={link.href}>
+              {index > 0 && <span className={styles.crumb}>›</span>}
               <a
                 href={link.href}
                 className={activeSection === link.href ? styles.active : ""}
@@ -83,7 +84,7 @@ export const Navbar = ({ onOpenPalette }) => {
         </button>
 
         <a href="#contact" className={styles.ctaBtn}>
-          Let's talk
+          ./contact.sh
         </a>
 
         <button

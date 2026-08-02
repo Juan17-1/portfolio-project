@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
 
 import styles from "./Experience.module.css";
-import skills from "../../data/skills.json";
 import history from "../../data/history.json";
-import { getImageUrl, fadeUp, staggerContainer, viewportOnce } from "../../utils";
+import { fadeUp, staggerContainer, viewportOnce } from "../../utils";
+
+const hashOf = (str) => {
+  let hash = 2166136261;
+  for (let i = 0; i < str.length; i += 1) {
+    hash ^= str.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0).toString(16).slice(0, 7).padStart(7, "0");
+};
 
 export const Experience = () => {
   return (
@@ -14,59 +22,41 @@ export const Experience = () => {
         viewport={viewportOnce}
         variants={fadeUp}
       >
-        <span className={styles.eyebrow}>Experience</span>
-        <h2 className={styles.title}>Skills &amp; background</h2>
+        <span className={styles.eyebrow}>git log --oneline --graph</span>
+        <h2 className={styles.title}>Education &amp; experience</h2>
       </motion.div>
 
-      <div className={styles.content}>
-        <motion.div
-          className={styles.skills}
-          variants={staggerContainer(0.05)}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-        >
-          {skills.map((skill) => (
-            <motion.div key={skill.title} className={styles.skill} variants={fadeUp}>
-              <div className={styles.skillImageContainer}>
-                <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
-              </div>
-              <p>{skill.title}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.ul
-          className={styles.history}
-          variants={staggerContainer(0.15)}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-        >
-          {history.map((historyItem) => (
-            <motion.li
-              key={`${historyItem.organisation}-${historyItem.startDate}`}
-              className={styles.historyItem}
-              variants={fadeUp}
-            >
-              <div className={styles.historyDot} />
-              <img
-                src={getImageUrl(historyItem.imageSrc)}
-                alt={`${historyItem.organisation} Logo`}
-              />
-              <div className={styles.historyItemDetails}>
-                <h3>{`${historyItem.role}, ${historyItem.organisation}`}</h3>
-                <p>{`${historyItem.startDate} - ${historyItem.endDate}`}</p>
-                <ul>
-                  {historyItem.experiences.map((experience) => (
-                    <li key={experience}>{experience}</li>
-                  ))}
-                </ul>
-              </div>
-            </motion.li>
-          ))}
-        </motion.ul>
-      </div>
+      <motion.ol
+        className={styles.gitlog}
+        variants={staggerContainer(0.12)}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+      >
+        {history.map((item, index) => (
+          <motion.li
+            key={`${item.organisation}-${item.startDate}`}
+            className={`${styles.commit} ${index === 0 ? styles.commitHead : ""}`}
+            variants={fadeUp}
+          >
+            <div className={styles.commitHead}>
+              <span className={styles.hash}>{hashOf(item.organisation + item.role)}</span>
+              {index === 0 && <span className={styles.tag}>HEAD</span>}
+            </div>
+            <h3>{item.role.trim()}</h3>
+            <div className={styles.meta}>
+              {item.organisation} — {item.startDate} → {item.endDate}
+            </div>
+            {item.experiences?.length > 0 && (
+              <ul className={styles.body}>
+                {item.experiences.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+            )}
+          </motion.li>
+        ))}
+      </motion.ol>
     </section>
   );
 };

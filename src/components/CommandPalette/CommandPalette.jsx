@@ -40,15 +40,14 @@ export const CommandPalette = ({ isOpen, onClose, onOpenProject }) => {
     };
 
     const list = [
-      { id: "nav-home", group: "Navigate", label: "Go to Home", icon: <FiArrowRight />, action: navigate("#home") },
-      { id: "nav-about", group: "Navigate", label: "Go to About", icon: <FiArrowRight />, action: navigate("#about") },
-      { id: "nav-experience", group: "Navigate", label: "Go to Experience", icon: <FiArrowRight />, action: navigate("#experience") },
-      { id: "nav-projects", group: "Navigate", label: "Go to Projects", icon: <FiArrowRight />, action: navigate("#projects") },
-      { id: "nav-contact", group: "Navigate", label: "Go to Contact", icon: <FiArrowRight />, action: navigate("#contact") },
+      { id: "nav-home", group: "Navigate", label: "Go to README.md", icon: <FiArrowRight />, action: navigate("#home") },
+      { id: "nav-experience", group: "Navigate", label: "Go to experience.json", icon: <FiArrowRight />, action: navigate("#experience") },
+      { id: "nav-projects", group: "Navigate", label: "Go to projects/", icon: <FiArrowRight />, action: navigate("#projects") },
+      { id: "nav-contact", group: "Navigate", label: "Go to contact.sh", icon: <FiArrowRight />, action: navigate("#contact") },
       ...projects.map((project) => ({
         id: `project-${project.id}`,
         group: "Projects",
-        label: `View case study: ${project.title}`,
+        label: `View merged PR: ${project.title}`,
         icon: <FiFolder />,
         action: () => {
           document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });

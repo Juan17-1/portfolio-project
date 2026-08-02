@@ -18,8 +18,8 @@ export const Projects = ({ activeProjectId, onOpenProject, onCloseProject }) => 
         viewport={viewportOnce}
         variants={fadeUp}
       >
-        <span className={styles.eyebrow}>Projects</span>
-        <h2 className={styles.title}>Things I've built</h2>
+        <span className={styles.eyebrow}>merged pull requests</span>
+        <h2 className={styles.title}>Selected work</h2>
       </motion.div>
 
       <motion.div
@@ -29,12 +29,23 @@ export const Projects = ({ activeProjectId, onOpenProject, onCloseProject }) => 
         whileInView="show"
         viewport={viewportOnce}
       >
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} onOpenCaseStudy={onOpenProject} />
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            prNumber={projects.length - index}
+            onOpenCaseStudy={onOpenProject}
+          />
         ))}
       </motion.div>
 
-      <ProjectModal project={activeProject} onClose={onCloseProject} />
+      <ProjectModal
+        project={activeProject}
+        prNumber={
+          activeProject ? projects.length - projects.indexOf(activeProject) : null
+        }
+        onClose={onCloseProject}
+      />
     </section>
   );
 };

@@ -1,5 +1,17 @@
 [
   {
+    "id": "soccer-manager",
+    "title": "Soccer Manager",
+    "imageSrc": "projects/project.png",
+    "tagline": "A full-stack team management platform built to help soccer coaches and team managers organize their teams, track player stats, and communicate with players and parents.",
+    "overview": "",
+    "approach": [],
+    "results": [],
+    "skills": ["React", "Node.js", "Express", "MongoDB"],
+    "demo": "",
+    "source": ""
+  },
+  {
     "id": "calculator",
     "title": "Calculator",
     "imageSrc": "projects/project.png",

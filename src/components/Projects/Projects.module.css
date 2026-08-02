@@ -4,36 +4,36 @@
   position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 60px var(--section-padding);
-  color: var(--color-text);
-  z-index: 1;
+  padding: 90px clamp(16px, 4vw, 40px) 40px;
+  width: 100%;
 }
 
 .eyebrow {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-primary-light);
-  margin-bottom: 14px;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  display: inline-block;
 }
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(28px, 3.6vw, 40px);
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin-bottom: 48px;
-  max-width: 560px;
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  margin: 0 0 32px;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 .projects {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: center;
-  gap: 24px;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 760px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
