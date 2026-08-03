@@ -1,78 +1,55 @@
 import { motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 import styles from "./Contact.module.css";
 import { fadeUp, staggerContainer, viewportOnce } from "../../utils";
 
-const CONTACT_LINKS = [
-  {
-    icon: <FiMail />,
-    label: "j.estrada101714@gmail.com",
-    href: "mailto:j.estrada101714@gmail.com",
-  },
-  {
-    icon: <FiLinkedin />,
-    label: "@juan-estrada17",
-    href: "https://www.linkedin.com/in/juan-estrada17",
-  },
-  {
-    icon: <FiGithub />,
-    label: "@Juan17-1",
-    href: "https://github.com/Juan17-1",
-  },
-];
+const EMAIL = "j.estrada101714@gmail.com";
+const GITHUB = "https://github.com/Juan17-1";
+const LINKEDIN = "https://www.linkedin.com/in/juan-estrada17";
 
 export const Contact = () => {
   return (
     <footer id="contact" className={styles.container}>
       <motion.div
-        className={styles.inner}
-        variants={staggerContainer(0.12)}
+        className={styles.footerTerm}
+        variants={staggerContainer(0.1)}
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
       >
-        <motion.span className={styles.eyebrow} variants={fadeUp}>
-          Contact
-        </motion.span>
-        <motion.h2 className={styles.title} variants={fadeUp}>
-          Let's build something <span className={styles.highlight}>great</span>{" "}
-          together.
+        <motion.div className={styles.line} variants={fadeUp}>
+          <span className={styles.prompt}>$</span> ./contact.sh
+        </motion.div>
+        <motion.div className={`${styles.line} ${styles.dim}`} variants={fadeUp}>
+          opening mail client...
+        </motion.div>
+        <motion.h2 className={styles.cta} variants={fadeUp}>
+          Open to full-time software engineering roles.
+          <br />
+          Let&apos;s talk.
         </motion.h2>
-        <motion.p className={styles.subtitle} variants={fadeUp}>
-          Feel free to reach out — I'm always open to new opportunities and
-          interesting projects.
-        </motion.p>
-
-        <motion.a
-          href="mailto:j.estrada101714@gmail.com"
-          className={styles.mailBtn}
-          variants={fadeUp}
-        >
-          <FiMail />
-          Say hello
-        </motion.a>
-
-        <motion.ul className={styles.links} variants={staggerContainer(0.08)}>
-          {CONTACT_LINKS.map((link) => (
-            <motion.li key={link.href} variants={fadeUp}>
-              <a
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                className={styles.link}
-              >
-                <span className={styles.linkIcon}>{link.icon}</span>
-                {link.label}
-              </a>
-            </motion.li>
-          ))}
-        </motion.ul>
+        <motion.div className={styles.actions} variants={fadeUp}>
+          <a className={`${styles.btn} ${styles.primary}`} href={`mailto:${EMAIL}`}>
+            Send an email
+          </a>
+          <a className={styles.btn} href={GITHUB} target="_blank" rel="noreferrer">
+            GitHub ↗
+          </a>
+          <a className={styles.btn} href={LINKEDIN} target="_blank" rel="noreferrer">
+            LinkedIn ↗
+          </a>
+        </motion.div>
       </motion.div>
 
-      <div className={styles.bottomBar}>
-        <p>&copy; {new Date().getFullYear()} Juan Estrada. All rights reserved.</p>
-        <a href="#home">Back to top</a>
+      <div className={styles.statusbar}>
+        <div className={styles.sbLeft}>
+          <span>⎇ main</span>
+          <span>© {new Date().getFullYear()} Juan Estrada</span>
+        </div>
+        <div className={styles.sbRight}>
+          <span>build: passing</span>
+          <a href="#home">back to top</a>
+        </div>
       </div>
     </footer>
   );

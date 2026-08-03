@@ -8,22 +8,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--color-surface);
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--color-bg-window);
   border: 1px solid var(--color-border-strong);
   color: var(--color-text);
   font-size: 18px;
   text-decoration: none;
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-elevated);
-  transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
 }
 
 .button:hover {
-  border-color: var(--color-primary-light);
-  background: var(--color-surface-hover);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
   transform: translateY(-3px);
 }
 

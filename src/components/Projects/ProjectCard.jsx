@@ -1,46 +1,20 @@
-import { useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { FiMaximize2 } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 import styles from "./ProjectCard.module.css";
-import { getImageUrl, fadeUp } from "../../utils";
+import { DIFF_STATS } from "./prMeta";
+import { fadeUp } from "../../utils";
 
-export const ProjectCard = ({ project, onOpenCaseStudy }) => {
-  const { title, imageSrc, tagline, skills, demo, source } = project;
-  const cardRef = useRef(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+export const ProjectCard = ({ project, prNumber, onOpenCaseStudy }) => {
+  const { id, title, tagline, skills, demo, source } = project;
+  const stats = DIFF_STATS[id];
 
-  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [8, -8]), {
-    stiffness: 220,
-    damping: 20,
-  });
-  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-8, 8]), {
-    stiffness: 220,
-    damping: 20,
-  });
-
-  const handleMouseMove = (e) => {
-    const rect = cardRef.current.getBoundingClientRect();
-    x.set((e.clientX - rect.left) / rect.width - 0.5);
-    y.set((e.clientY - rect.top) / rect.height - 0.5);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-  const openCaseStudy = () => onOpenCaseStudy(project.id);
+  const openCaseStudy = () => onOpenCaseStudy(id);
 
   return (
-    <motion.div
-      ref={cardRef}
+    <motion.article
+      id={`proj-${id}`}
       className={styles.container}
       variants={fadeUp}
-      style={{ rotateX, rotateY, transformPerspective: 800 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       onClick={openCaseStudy}
       role="button"
       tabIndex={0}
@@ -48,22 +22,24 @@ export const ProjectCard = ({ project, onOpenCaseStudy }) => {
         if (e.key === "Enter") openCaseStudy();
       }}
     >
-      <div className={styles.imageWrap}>
-        <img
-          src={getImageUrl(imageSrc)}
-          alt={`Screenshot of ${title}`}
-          className={styles.image}
-        />
-        <div className={styles.imageOverlay}>
-          <span className={styles.overlayHint}>
-            <FiMaximize2 />
-            View case study
-          </span>
-        </div>
+      <div className={styles.top}>
+        <span className={styles.mergedBadge}>Merged</span>
+        <span className={styles.prNum}>
+          #{prNumber} add-{id}
+        </span>
       </div>
 
       <h3 className={styles.title}>{title}</h3>
       {tagline && <p className={styles.description}>{tagline}</p>}
+
+      {stats && (
+        <div className={styles.diffstat}>
+          <span className={styles.add}>+{stats.add}</span>
+          <span className={styles.rem}>−{stats.rem}</span>
+          <span className={styles.files}>{stats.files} files changed</span>
+        </div>
+      )}
+      <div className={styles.ci}>checks passed</div>
 
       <ul className={styles.skills}>
         {skills.map((skill) => (
@@ -74,25 +50,29 @@ export const ProjectCard = ({ project, onOpenCaseStudy }) => {
       </ul>
 
       <div className={styles.links}>
-        <a
-          href={demo}
-          target="_blank"
-          rel="noreferrer"
-          className={styles.link}
-          onClick={(e) => e.stopPropagation()}
-        >
-          Live demo
-        </a>
-        <a
-          href={source}
-          target="_blank"
-          rel="noreferrer"
-          className={styles.linkGhost}
-          onClick={(e) => e.stopPropagation()}
-        >
-          Source
-        </a>
+        {demo && (
+          <a
+            href={demo}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.link}
+            onClick={(e) => e.stopPropagation()}
+          >
+            Live demo ↗
+          </a>
+        )}
+        {source && (
+          <a
+            href={source}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.link}
+            onClick={(e) => e.stopPropagation()}
+          >
+            View repo ↗
+          </a>
+        )}
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
