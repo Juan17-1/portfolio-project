@@ -1,5 +1,11 @@
 [
-  {
+  {"role": "Bachelors degree ",
+    "organzation": "WGU",
+    "startDate": "Aug, 2026",
+    "endDate": "Dec, 2026",
+    "experiences": "Bachelors degree",
+},
+{
     "role": "Bachelors degree ",
     "organisation": "UNLV",
     "startDate": "Aug, 2021",
